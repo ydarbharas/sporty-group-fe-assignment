@@ -21,6 +21,39 @@ A modern, responsive Vue.js application for browsing sports leagues from around 
 - **Axios** - HTTP client for API requests
 - **Vite** - Fast build tool and development server
 
+## 🎨 Design Decisions
+
+### Layout & User Experience
+
+- **Grid Layout for League Cards**: Chosen for optimal responsiveness across different screen sizes
+- **Coloured Sport Chips**: Different coloured chips for each sport type to help users quickly differentiate between sports
+- **Modal for League Badges**: Badges are displayed in a modal rather than inline to maintain consistent card formatting, as badges can vary significantly in size
+- **Floating Action Button (FAB)**: Scroll-to-top button for easy access to filtering controls, especially useful when the league list becomes longer
+- **Grey Background for Badges**: Ensures all badges are visible regardless of their original colour scheme (some badges are light-coloured and would be hard to see on white backgrounds)
+
+### Technical Architecture
+
+- **Component-Based Structure**: Modular components for maintainability and reusability
+- **Centralised State Management**: Using Pinia for predictable state management
+- **Type Safety**: Full TypeScript implementation for better development experience and error prevention
+- **API Caching**: Intelligent caching of league badges to minimise redundant API calls
+
+## 🤖 AI Tools Used
+
+### Development Assistance
+
+- **Cursor IDE**: Used for initial project setup and scaffolding, code reviewing, and improving type safety throughout the development process
+- **ChatGPT**: Efficient Vuetify documentation Q&A - the Vuetify documentation can be unintuitive, so ChatGPT provided quicker and easier access to classes, component usage and best practices. Also used for README support and code polishing
+
+## 📋 Assumptions
+
+### API Assumptions
+
+- **Well-formed Responses**: The SportsDB API is assumed to always return well-formed JSON responses with the expected data structure
+- **Proper HTTP Errors**: The API is expected to return appropriate HTTP status codes and error messages for failed requests
+- **Data Consistency**: League and season data is assumed to be consistent and reliable
+- **Availability**: The API is assumed to be generally available and responsive
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -119,17 +152,17 @@ src/
 - `npm run lint` - Run ESLint with auto-fix
 - `npm run format` - Format code with Prettier
 
-## 🎨 Customization
+## 🎨 Customisation
 
-### Theme Colors
+### Theme Colours
 
-The primary color can be customized in `src/main.ts`:
+The primary colour can be customised in `src/main.ts`:
 
 ```typescript
 theme: {
   themes: {
     light: {
-      colors: {
+      colours: {
         primary: '#E41826',
       },
     },
@@ -143,6 +176,20 @@ Add new sports and their styling in `src/utils/sportsTypeMeta.ts`:
 
 ```typescript
 export const sportsTypeMeta: SportMetaMap = {
-  'New Sport': { color: 'purple-darken-1', icon: 'mdi-sport-icon' },
+  'New Sport': { colour: 'purple-darken-1', icon: 'mdi-sport-icon' },
 }
 ```
+
+## 🚀 Suggested Improvements
+
+### User Experience Enhancements
+
+- **Skeleton Loader**: Implement skeleton loading states for the league list to provide better visual feedback during data fetching
+- **Unit Testing**: Introduce comprehensive unit tests using Jest for component testing - whilst the application is currently small, unit testing will be crucial for larger applications and team development
+
+### Technical Enhancements
+
+- **Error Boundaries**: Implement Vue error boundaries for better error handling
+- **Accessibility**: Add ARIA labels and keyboard navigation support
+- **Performance**: Implement virtual scrolling for large league lists
+- **Internationalisation**: Add multi-language support for global users
