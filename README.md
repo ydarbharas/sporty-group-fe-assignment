@@ -66,8 +66,8 @@ A modern, responsive Vue.js application for browsing sports leagues from around 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/ydarbharas/sporty-group-fe-assignment.git
-   cd sporty-group-fe-assignment
+   git clone https://github.com/ydarbharas/sports-league-list.git
+   cd sports-league-list
    ```
 
 2. **Install dependencies**
@@ -104,7 +104,6 @@ src/
 │   ├── LeagueBadgeDialog.vue # Modal for league badges
 │   ├── LeagueCard.vue      # Individual league card
 │   ├── LeagueList.vue      # League grid display
-│   ├── NavBar.vue          # Navigation header
 │   └── ScrollToTopFab.vue  # Scroll to top button
 ├── stores/
 │   └── leagueStore.ts      # Pinia store for state management

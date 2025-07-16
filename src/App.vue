@@ -1,6 +1,5 @@
 <template>
   <v-app class="bg-grey-lighten-5">
-    <NavBar />
     <v-main>
       <div class="text-center ma-8 text-grey-darken-4">
         <h2 class="pb-1">Sports League Database</h2>
@@ -17,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
 import FilterBar from './components/FilterBar.vue'
 import LeagueList from './components/LeagueList.vue'
 import ScrollToTopFab from './components/ScrollToTopFab.vue'
